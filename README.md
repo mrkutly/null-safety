@@ -3,15 +3,15 @@
 ## A null safety utility for objects and nested arrays in Javascript
 
 This package will allow you to safely access nested objects and arrays with throwing everyone's favorite error:
-`"Cannot read property ____ of undefined"`
+`"Cannot read property ___ of undefined"`
 
 ### To Install
 
-1. install the package
-   `npm install null-safe`
+1. install the package:
+   `npm install null-check`
 
-2. require it in your package
-   `const ns = require('null-safe')`
+2. require it in your package:
+   ``javascript const ns = require('null-check')`
 
 ## To Use
 

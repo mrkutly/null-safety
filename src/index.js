@@ -23,4 +23,4 @@ function ns(obj, string) {
 	}, {});
 }
 
-exports = ns;
+module.exports = ns;

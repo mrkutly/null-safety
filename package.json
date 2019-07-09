@@ -1,10 +1,11 @@
 {
-	"name": "null-safe",
-	"version": "1.0.0",
+	"name": "@mrkutly/null-safe",
+	"version": "1.0.1",
 	"description": "Null Safety Utility for nested Objects and Arrays",
-	"main": "index.js",
+	"main": "build/index.js",
 	"scripts": {
-		"test": "jest"
+		"test": "jest",
+		"build": "webpack"
 	},
 	"repository": {
 		"type": "git",
@@ -15,5 +16,12 @@
 	"bugs": {
 		"url": "https://github.com/mrkutly/null-safety/issues"
 	},
-	"homepage": "https://github.com/mrkutly/null-safety#readme"
+	"homepage": "https://github.com/mrkutly/null-safety#readme",
+	"devDependencies": {
+		"@babel/core": "^7.5.4",
+		"webpack": "^4.35.3",
+		"webpack-cli": "^3.3.5",
+		"babel-loader": "^8.0.6",
+		"@babel/preset-env": "^7.5.4"
+	}
 }
