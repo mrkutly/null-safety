@@ -41,6 +41,7 @@ const butter = {
 
 ns(butter, "price.tax.state"); // => 10;
 ns(butter, "colors[0][0]"); // => 'yellow';
+ns(butter, "colors[0].not.real.value"); // => undefined;
 ```
 
 The accessors you pass are just whatever accessors you would normally use in js assuming all of the values in the chain are not undefined or null.
