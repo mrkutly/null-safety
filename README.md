@@ -8,11 +8,11 @@ This package will allow you to safely access nested objects and arrays with thro
 ### To Install
 
 1. install the package:
-   `npm install null-check`
+   `npm install @mrkutly/null-safe`
 
 2. require it in your package:
    ```javascript
-   const ns = require('null-check');
+   const ns = require("@mrkutly/null-safe");
    ```
 
 ## To Use
@@ -27,20 +27,20 @@ For example:
 
 ```javascript
 const butter = {
-	milk: 'cow',
-	colors: [['yellow'], 'white', 'cream'],
+	milk: "cow",
+	colors: [["yellow"], "white", "cream"],
 	price: {
-		denomination: 'USD',
-		amount: '200',
+		denomination: "USD",
+		amount: "200",
 		tax: {
-			state: '10',
-			federal: '20',
+			state: "10",
+			federal: "20",
 		},
 	},
 };
 
-ns(butter, 'price.tax.state'); // => 10;
-ns(butter, 'colors[0][0]'); // => 'yellow';
+ns(butter, "price.tax.state"); // => 10;
+ns(butter, "colors[0][0]"); // => 'yellow';
 ```
 
 The accessors you pass are just whatever accessors you would normally use in js assuming all of the values in the chain are not undefined or null.
