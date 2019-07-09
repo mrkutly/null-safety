@@ -11,7 +11,9 @@ This package will allow you to safely access nested objects and arrays with thro
    `npm install null-check`
 
 2. require it in your package:
-   ``javascript const ns = require('null-check')`
+   ```javascript
+   const ns = require('null-check');
+   ```
 
 ## To Use
 

@@ -1,4 +1,5 @@
 function ns(obj, string) {
+	obj = obj || {};
 	const arr = string.split(/\[|\]|\./);
 	const cleaned = arr.filter(el => !!el.length);
 
