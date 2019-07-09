@@ -26,8 +26,12 @@ describe('ns', () => {
 		expect(ns(butter, 'not.real.value')).toBeUndefined();
 	});
 
-	it('does not throw an error when evaluating an undefined array index', () => {
+	it('does not throw an error when evaluating multiple undefined array indeces', () => {
 		expect(ns(butter, '[0]')).toBeUndefined();
+	});
+
+	it('does not throw an error when evaluating an undefined array index', () => {
+		expect(ns(butter, 'milk[0][0][100]')).toBeUndefined();
 	});
 
 	it('evaluates keys', () => {
