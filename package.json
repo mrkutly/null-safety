@@ -1,6 +1,6 @@
 {
 	"name": "@mrkutly/null-safe",
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"description": "Null Safety Utility for nested Objects and Arrays",
 	"main": "build/index.js",
 	"scripts": {
