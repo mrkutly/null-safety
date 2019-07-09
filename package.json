@@ -1,0 +1,19 @@
+{
+	"name": "null-safe",
+	"version": "1.0.0",
+	"description": "Null Safety Utility for nested Objects and Arrays",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mrkutly/null-safety"
+	},
+	"author": "Mark Sauer-Utley",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mrkutly/null-safety/issues"
+	},
+	"homepage": "https://github.com/mrkutly/null-safety#readme"
+}
