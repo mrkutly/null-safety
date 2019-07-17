@@ -12,7 +12,7 @@ This package will allow you to safely access and set properties on nested object
 
 2. require it in your package:
    ```javascript
-   const ns = require('null-check');
+   const ns = require('@mrkutly/null-safe');
    ```
 
 ## To Use
