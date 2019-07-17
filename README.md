@@ -8,7 +8,7 @@ This package will allow you to safely access and set properties on nested object
 ### To Install
 
 1. install the package:
-   `npm install null-check`
+   `npm install @mrkutly/null-safe`
 
 2. require it in your package:
    ```javascript
