@@ -1,27 +1,40 @@
-function ns(obj, string) {
+function get(obj, string) {
 	obj = obj || {};
-	const arr = string.split(/\[|\]|\./);
-	const cleaned = arr.filter(el => !!el.length);
+	const accessors = string.split(/\[|\]|\./).filter(el => !!el.length);
 
-	const mapped = cleaned.map(el => {
-		if (el === '0') return 0;
-		if (parseInt(el)) return parseInt(el);
-		return el;
-	});
+	const typed = accessors.map(el =>
+		parseInt(el) || el === '0' ? parseInt(el) : el
+	);
 
-	return mapped.reduce((acc, el, idx) => {
+	return typed.reduce((acc, el, idx) => {
 		let val;
-		if (idx === mapped.length - 1) {
+
+		if (idx === typed.length - 1) {
 			val = idx === 0 ? obj[el] : acc[el];
 			return val;
 		}
-		if (typeof mapped[idx + 1] === 'number') {
-			val = idx === 0 ? obj[el] || [] : acc[el] || [];
-		} else {
-			val = idx === 0 ? obj[el] || {} : acc[el] || {};
-		}
+
+		val = idx === 0 ? obj[el] || {} : acc[el] || {};
 		return val;
 	}, {});
 }
 
-module.exports = ns;
+function set(obj, string, val) {
+	obj = obj || {};
+	const accessors = string.split(/\[|\]|\./).filter(el => !!el.length);
+
+	const typed = accessors.map(el =>
+		parseInt(el) || el === '0' ? parseInt(el) : el
+	);
+
+	return typed.reduce((acc, el, idx) => {
+		acc = acc || {};
+		if (acc[el] && idx !== typed.length - 1) {
+			return acc[el];
+		} else if (idx === typed.length - 1 && acc[el]) {
+			acc[el] = val;
+		}
+	}, obj);
+}
+
+module.exports = { get, set };
