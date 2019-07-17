@@ -2,7 +2,7 @@
 
 ## A null safety utility for objects and nested arrays in Javascript
 
-This package will allow you to safely access nested objects and arrays with throwing everyone"s favorite error:
+This package will allow you to safely access and set properties on nested objects and arrays with throwing everyone"s favorite error:
 `"Cannot read property ___ of undefined"`
 
 ### To Install
