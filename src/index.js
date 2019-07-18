@@ -3,7 +3,7 @@ const ns = {
 		const accessors = string.split(/\[|\]|\./).filter(el => !!el.length);
 
 		return accessors.map(el =>
-			parseInt(el) || el === '0' ? parseInt(el) : el
+			parseInt(el) || el === "0" ? parseInt(el) : el
 		);
 	},
 
@@ -40,21 +40,25 @@ const ns = {
 		}, obj);
 	},
 
-	func(obj, string, ...theArgs) {
+	call(obj, string, ...theArgs) {
 		obj = obj || {};
 
 		const accessors = this.parseAccessors(string);
+
+		let returnVal;
 
 		accessors.reduce((acc, el, idx) => {
 			acc = acc || {};
 			if (acc[el] && idx !== accessors.length - 1) {
 				return acc[el];
 			} else if (idx === accessors.length - 1 && acc[el]) {
-				if (typeof acc[el] === 'function') {
-					acc[el](...theArgs);
+				if (typeof acc[el] === "function") {
+					returnVal = acc[el](...theArgs);
 				}
 			}
 		}, obj);
+
+		return returnVal;
 	},
 };
 
