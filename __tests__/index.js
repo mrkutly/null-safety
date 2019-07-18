@@ -140,4 +140,7 @@ describe('ns', () => {
 			expect(butter.colors[1][1][1]).toEqual('fuchsia');
 		});
 	});
+	// TODO: test ns.func()
+	// ? ns.func(butter, 'price.printPrice');
+	// ?ns.func(butter, 'info.sayHello', 'mark', 'naomi');
 });
