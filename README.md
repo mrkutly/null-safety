@@ -108,6 +108,10 @@ ns.set(butter, 'info[date-churned]', 'January 1st');
 The ns.call() function takes in 2 required arguments and any number of optional arguments: the object you want to call the method on, a string of accessors to the method you want to call, and (optional) any arguments you want to call the method with.
 
 ```javascript
+function sayPhrase(exclamation = '', extra = '') {
+	return this.phrase + exclamation + extra;
+}
+
 const person = {
 	name: 'mark',
 	sayHello() {
