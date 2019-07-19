@@ -163,8 +163,7 @@ const person = {
 ns.call(person, 'sayHelloWithThis'); // => "hi i'm mark"
 ns.call(person, 'favoritePhrases[0].variations[0].sayPhrase'); // => 'I love doggos'
 ns.call(person, 'favoritePhrases[1].sayPhrase', '!'); // => "Pizza is great!";
-// => undefined
-// => nothing happens;
+ns.call(person, 'someFakeMethod'); // => undefined
 ```
 
 The accessors you pass are just whatever accessors you would normally use in js assuming all of the values in the chain are not undefined or null.
