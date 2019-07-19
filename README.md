@@ -102,3 +102,76 @@ ns.set(butter, 'info[date-churned]', 'January 1st');
 // => January 1st;
 // butter.info["date-churned"] => "January 1st"
 ```
+
+### Calling Methods
+
+The ns.call() function takes in 2 required arguments and any number of optional arguments: the object you want to call the method on, a string of accessors to the method you want to call, and (optional) any arguments you want to call the method with.
+
+```javascript
+const person = {
+	name: 'mark',
+	sayHello() {
+		return 'hello';
+	},
+	sayHelloWithName(name) {
+		return 'hello ' + name;
+	},
+	sayHelloWithThis() {
+		return "hi i'm " + this.name;
+	},
+	birthplace: {
+		city: 'Dallas',
+		state: 'Texas',
+		introduce() {
+			return `My name is mark and I was born in ${this.city}, ${this.state}.`;
+		},
+	},
+	favoritePhrases: [
+		{
+			phrase: 'I love dogs',
+			sayPhrase,
+			variations: [
+				{
+					phrase: 'I love doggos',
+					sayPhrase,
+				},
+			],
+		},
+		{
+			phrase: 'Pizza is great',
+			sayPhrase,
+			variations: [
+				{
+					phrase: 'L&B is the best',
+					sayPhrase,
+				},
+			],
+		},
+		{
+			phrase: 'Sick!',
+			sayPhrase,
+			variations: [
+				{
+					phrase: "That's so sick",
+					sayPhrase,
+				},
+			],
+		},
+	],
+};
+
+ns.call(person, 'sayHelloWithThis'); // => "hi i'm mark"
+ns.call(person, 'favoritePhrases[0].variations[0].sayPhrase'); // => 'I love doggos'
+ns.call(person, 'favoritePhrases[1].sayPhrase', '!'); // => "Pizza is great!";
+// => undefined
+// => nothing happens;
+```
+
+The accessors you pass are just whatever accessors you would normally use in js assuming all of the values in the chain are not undefined or null.
+If any of the values in the chain evaluate to undefined, ns.call() will return undefined and will not have a side effect on the object.
+
+If using a key with a "-", do not wrap it in quotes like you normally would. Instead just do this:
+
+```javascript
+ns.call(person, '[some-key]', 'some argument');
+```
